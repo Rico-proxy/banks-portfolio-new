@@ -44,6 +44,7 @@ export const muralsData: GalleryItem[] = [
 ];
 
 export const muralsPageData = {
+  basePath: '/murals',
   kicker: '[ ARCHIVE: PUBLIC ART ]',
   title: 'Monumental Wall Murals',
   subtitle: 'Architectural & Exterior Wall Projects',

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { ArtworkModal } from '../shared/artwork-modal';
 import type { GalleryItem } from '../shared/types';
 import { GalleryPage } from './gallery-page';
 
@@ -8,15 +6,9 @@ type GalleryRoutePageProps = {
   title: string;
   subtitle: string;
   items: GalleryItem[];
+  basePath: string;
 };
 
 export function GalleryRoutePage(props: GalleryRoutePageProps) {
-  const [selectedArtwork, setSelectedArtwork] = useState<GalleryItem | null>(null);
-
-  return (
-    <>
-      <GalleryPage {...props} onSelect={setSelectedArtwork} />
-      <ArtworkModal artwork={selectedArtwork} onClose={() => setSelectedArtwork(null)} />
-    </>
-  );
+  return <GalleryPage {...props} />;
 }

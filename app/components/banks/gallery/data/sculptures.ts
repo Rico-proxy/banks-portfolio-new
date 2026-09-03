@@ -33,6 +33,7 @@ export const sculpturesData: GalleryItem[] = [
 ];
 
 export const sculpturesPageData = {
+  basePath: '/sculptures',
   kicker: '[ ARCHIVE: 3D FORMS ]',
   title: 'Bronze & Metal Masterworks',
   subtitle: 'Cast Bronze & Welded Steel Monuments',

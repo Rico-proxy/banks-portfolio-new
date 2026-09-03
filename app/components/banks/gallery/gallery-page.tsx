@@ -6,10 +6,10 @@ type GalleryPageProps = {
   title: string;
   subtitle: string;
   items: GalleryItem[];
-  onSelect: (item: GalleryItem) => void;
+  basePath: string;
 };
 
-export function GalleryPage({ kicker, title, subtitle, items, onSelect }: GalleryPageProps) {
+export function GalleryPage({ kicker, title, subtitle, items, basePath }: GalleryPageProps) {
   return (
     <section className="mx-auto max-w-7xl px-6">
       <div className="mb-12">
@@ -19,7 +19,7 @@ export function GalleryPage({ kicker, title, subtitle, items, onSelect }: Galler
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
-          <GalleryCard key={item.id} item={item} onSelect={onSelect} />
+          <GalleryCard key={item.id} item={item} href={`${basePath}/${item.id}`} />
         ))}
       </div>
     </section>

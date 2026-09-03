@@ -61,6 +61,7 @@ export const artworksData: GalleryItem[] = [
 ];
 
 export const artworksPageData = {
+  basePath: '/artworks',
   kicker: '[ ARCHIVE: FINE ART ]',
   title: 'Paintings, Mixed Media & Portraits',
   subtitle: 'Click any artwork to inspect details and acquisition notes',

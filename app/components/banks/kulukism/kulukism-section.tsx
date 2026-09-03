@@ -1,12 +1,7 @@
-import type { GalleryItem } from '../shared/types';
 import { GalleryCard } from '../shared/gallery-card';
 import { kulukismArchive, kulukismData, kulukismIntro } from './data/kulukism';
 
-type KulukismSectionProps = {
-  onSelect: (item: GalleryItem) => void;
-};
-
-export function KulukismSection({ onSelect }: KulukismSectionProps) {
+export function KulukismSection() {
   return (
     <section className="mx-auto max-w-7xl space-y-16 px-6">
       <div className="art-frame relative overflow-hidden rounded-3xl bg-studio-card p-8 sm:p-16">
@@ -33,7 +28,7 @@ export function KulukismSection({ onSelect }: KulukismSectionProps) {
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {kulukismData.map((item) => (
-            <GalleryCard key={item.id} item={item} onSelect={onSelect} />
+            <GalleryCard key={item.id} item={item} href={`/kulukism/${item.id}`} />
           ))}
         </div>
       </div>

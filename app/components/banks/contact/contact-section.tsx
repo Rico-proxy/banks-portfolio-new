@@ -1,6 +1,9 @@
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '~/components/ui/button';
+import { Input } from '~/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/components/ui/select';
+import { Textarea } from '~/components/ui/textarea';
 
 const commissionCategories = [
   'Kulukism / Holocaust Series Acquisition',
@@ -31,39 +34,44 @@ export function ContactSection() {
         }}>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <Field label="Your Name">
-            <input
+            <Input
               type="text"
               required
               placeholder="Full Name"
-              className="studio-input"
+              className="h-12 rounded-none border-ochre-gold/30 bg-studio-card px-4 font-mono text-xs text-sandstone focus-visible:border-ochre-gold"
             />
           </Field>
           <Field label="Email Address">
-            <input
+            <Input
               type="email"
               required
               placeholder="email@domain.com"
-              className="studio-input"
+              className="h-12 rounded-none border-ochre-gold/30 bg-studio-card px-4 font-mono text-xs text-sandstone focus-visible:border-ochre-gold"
             />
           </Field>
         </div>
 
         <Field label="Commission Category">
-          <select className="studio-input">
-            {commissionCategories.map((category) => (
-              <option key={category} className="bg-studio-card">
-                {category}
-              </option>
-            ))}
-          </select>
+          <Select defaultValue={commissionCategories[0]} name="category">
+            <SelectTrigger className="h-12 w-full rounded-none border-ochre-gold/30 bg-studio-card px-4 font-mono text-xs text-sandstone focus:border-ochre-gold">
+              <SelectValue placeholder="Select a category" />
+            </SelectTrigger>
+            <SelectContent className="border-ochre-gold/30 bg-studio-card text-sandstone">
+              {commissionCategories.map((category) => (
+                <SelectItem key={category} value={category} className="font-mono text-xs">
+                  {category}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </Field>
 
         <Field label="Project Brief / Message">
-          <textarea
+          <Textarea
             rows={5}
             required
             placeholder="Provide project scope or artwork acquisition inquiry..."
-            className="studio-input resize-y"
+            className="min-h-32 rounded-none border-ochre-gold/30 bg-studio-card p-4 font-mono text-xs text-sandstone focus-visible:border-ochre-gold"
           />
         </Field>
 
